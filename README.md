@@ -8,7 +8,7 @@ Please see the [license file](PRiME-License.txt) file for further details regard
 
 Please refer to [https://nhlbi-mr.github.io/PRiME](https://nhlbi-mr.github.io/PRiME/) for a general overview of the system.
 
-The full release is available [here](https://github.com/NIH-CIT-OIR-SPIS/PRiME/releases/latest) as a compressed file. The v1.0 release was implemented in Dr. Robert Lederman's lab at the NIH.
+The full release is available [here](https://github.com/NHLBI-MR/PRiME/releases/latest) as a compressed file. The v1.0 release was implemented in Dr. Robert Lederman's lab at the NIH.
 
 ----------
 
