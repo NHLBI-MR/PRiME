@@ -1,0 +1,5 @@
+<language en>
+For use in MRITelemetry Project (cardiovascular intervention with Dr. Lederman NHLBI).
+<p>
+This board interfaces to the NI FPGA board and converts the PWM output signals to analog signal of appropriate voltages for the SENSIS recording system.
+</language en>
