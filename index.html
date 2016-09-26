@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>PRiME by NHLBI-MR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">PRiME</h1>
+      <h2 class="project-tagline">Physiological Recording in MRI Environment</h2>
+      <a href="https://github.com/NHLBI-MR/PRiME" class="btn">View on GitHub</a>
+      <a href="https://github.com/NHLBI-MR/PRiME/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/NHLBI-MR/PRiME/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="prime" class="anchor" href="#prime" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PRiME</h1>
+
+<p><strong>P</strong>hysiological <strong>R</strong>ecording <strong>i</strong>n <strong>M</strong>RI <strong>E</strong>nvironment</p>
+
+<p>Welcome to the technology transfer site for the PRiME system, an MRI-compatible hemodynamic recording system developed at the National Institutes of Health (NIH) in Bethesda, MD. This site is a work in progress and will be updated periodically. Please direct any questions to John Kakareka, <a href="kakareka@nih.gov">kakareka@nih.gov</a>.</p>
+
+<p>Last Updated: 03/18/2016</p>
+
+<p><a href="#desc">Description</a><br>
+<a href="#results">Results</a><br>
+<a href="#details">Details of System</a><br>
+<a href="#costs">Estimated Costs</a><br>
+<a href="#changes">Summary of upcoming changes</a></p>
+
+<h2>
+<a id="description" class="anchor" href="#description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="desc"></a>Description</h2>
+
+<p>PRiME is an MRI-compatible hemodynamic recording system which supports 6-lead ECG and 2 invasive blood pressure (IBP) channels. We are providing all of our design documentation at no cost, and with no licensing requirements, to allow interested parties to duplicate our PRiME system.</p>
+
+<p>The PRiME system was designed within the <a href="http://www.nih.gov">NIH</a> Intramural Research Program (IRP) as a collaboration between researchers (Cardiovascular Intervention Program (CIP), Dr. Anthony Z. Faranesh and Dr. Robert Lederman) at the National Heart, Blood, and Lung Institute (NHLBI) and engineers (Signal Processing and Instrumentation Section (SPIS), John Kakareka and Tom Pohida) at the Center for Information Technology (CIT).
+Information on this site represents the current PRiME prototype design incorporating a variety of design changes and features that resulted from extensive prototype testing. This design is being modified to ease the duplication of the PRiME system by outside parties. </p>
+
+<h2>
+<a id="results" class="anchor" href="#results" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="results"></a>Results</h2>
+
+<p>In early 2015, the PRiME prototype system was integrated with cardiovascular interventional procedures conducted at both the NIH and Children's National Medical Center (CNMC, Washington D.C.). After installation of the PRiME system in early 2015, CNMC was able to begin performing procedures.  Dozens of MRI catheterization procedures in children and adults have been performed to date at both medical centers, in addition to dozens more preclinical studies.</p>
+
+<h2>
+<a id="details-of-the-prototype-system" class="anchor" href="#details-of-the-prototype-system" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="details"></a>Details of the Prototype System</h2>
+
+<p>The PRiME system is composed of 3 main components:</p>
+
+<ol>
+<li>
+<a href="#PSA">Physiological Signal Acquisition</a> </li>
+<li>
+<a href="#CSAF">Control System and Adaptive Filtering</a><br>
+</li>
+<li>
+<p><a href="#PSC">Physiological Signal Conversion</a> </p>
+
+<h3>
+<a id="physiological-signal-acquisition" class="anchor" href="#physiological-signal-acquisition" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="PSA"></a>Physiological Signal Acquisition</h3>
+
+<p>The Physiological Signal Acquisition (PSA) component is placed next to the patient, typically clamped to an IV pole attached to the patient table. The PSA ECG inputs are compatible with standard individual lead ECG connectors, and we use commercially available MRI-compatible ECG electrodes and cable. The PSA IBP inputs are RJ45 (Ethernet-style) connectors, and require the use of a custom cable adapter to interface with standard IBP transducers (we have only tested Edwards transducers). Fiber optic cables transfer the digitized physiological data into the control room. A removable lithium-ion battery provides PSA power with sufficient capacity for catheterization procedures.
+The PSA should not be placed in the bore, and should be physically secured such as by clamping to an IV pole.</p>
+
+<p><strong>Quick Notes</strong>  </p>
+
+<ul>
+<li>Requires standard MRI-compatible ECG cable and electrodes<br>
+</li>
+<li>Recommend standard IBP Edwards transducers, but requires custom adapters (details will be provided)<br>
+</li>
+<li>Requires fiber optic cables from patient table to MRI control room </li>
+</ul>
+
+<h3>
+<a id="control-system-and-adaptive-filtering" class="anchor" href="#control-system-and-adaptive-filtering" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="CSAF"></a>Control System and Adaptive Filtering</h3>
+
+<p>The Control System and Adaptive Filtering (CSAF) component is placed in the MRI control room and consists of a commercial FPGA (field programmable gate array) board, a microprocessor board, and a standard Windows 7 computer. The microprocessor board and FPGA board are housed within the same enclosure and interface to the computer through a USB cable. Among other functions, the microprocessor board interfaces the incoming fiber optic cables to the FPGA board inputs.  The FPGA board provides custom real-time digital adaptive filtering of noise induced on ECG signals by the MRI gradients.  The inputs to the adaptive filter include the ECG signals and the gradient control signals from the MRI system.  To access the MRI gradient control signals, coaxial cable is run from the MRI cabinet to the MRI control room. Custom LabVIEW software on the computer allows control of the PRiME system and display of all physiological signals.  The computer software also generates a trigger based on any of the acquired signals, which can be used for gated MRI sequences. PRiME-triggered gated MRI requires an additional coaxial cable to be run from the MRI control room to the MRI scanner trigger input. </p>
+
+<p><strong>Quick Notes</strong></p>
+
+<ul>
+<li>Requires 3-4 coaxial cables (standard RG58 cable) from MRI cabinet to MRI control room<br>
+</li>
+<li>Requires standard Windows 7 computer, no special requirements </li>
+<li>User interface and FPGA code will be provided as binaries. </li>
+<li>For centers planning development or PRiME customization (e.g., collaboration with NIH) capabilities, a LabVIEW development suite is required. </li>
+</ul>
+
+<h3>
+<a id="physiological-signal-converter" class="anchor" href="#physiological-signal-converter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="PSC"></a>Physiological Signal Converter</h3>
+
+<p>The Physiological Signal Converter (PSC) component is placed in either the X-Ray room or MRI control room, depending on the site-specific setup. The PSC receives the PRiME-filtered physiological data from the <a href="#CSAF">CSAF</a>, and converts the digital data to analog signals compatible with the inputs of commercially available hemodynamic recording systems (e.g. Siemens Sensis, GE Mac-Lab). The PSC is located near the analog input module of the commercial recording system (i.e., where ECG and IBP cables are normally attached). If the PSC is in the X-ray room, a multi-wire electrical cable (at least 9 twisted pairs) is run from the MRI control (where the <a href="#CSAF">CSAF</a> is located) to the X-ray room. This cable could be run under the floor as it is essentially a permanent connection.
+As with the <a href="#PSA">PSA</a> cabling, IBP signal custom cable adapters are required between the PSC and commercial recording system. </p>
+
+<p><strong>Quick Notes</strong></p>
+
+<ul>
+<li>Integrates PRiME system into normal workflow with commercial recording systems </li>
+<li>Requires custom adapters for IBP signals (details provided) </li>
+<li>May need a multi-wire cable from MRI control room to X-ray room<br>
+</li>
+</ul>
+</li>
+</ol>
+
+<h2>
+<a id="estimated-cost-breakdown" class="anchor" href="#estimated-cost-breakdown" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="costs"></a>Estimated cost breakdown</h2>
+
+<p>The following are cost estimates are based on our preliminary designs. The list of components and assembly services, with corresponding cost estimates, are intended for planning purposes only because the PRiME system design is not finalized and subject to change.</p>
+
+<ol>
+<li>
+<a href="#PSA">Physiological Signal Acquisition Component</a> - <strong>Total: $4600</strong><br>
+
+<ul>
+<li>Electronic circuit components: $450<br>
+</li>
+<li>Custom printed circuit boards: $3,300</li>
+<li>Assembly costs: $500</li>
+<li>Accutronics battery CC2300 and charger CX6100 (UK company, costly shipping): $350 </li>
+<li>HFBR Duplex Plastic Fiber Optic Cable (2 sets): $200 (depends on length required)</li>
+<li>Custom cable adaptors: (details will be provided)</li>
+</ul>
+</li>
+<li>
+<a href="#CSAF">Control System and Adaptive Filter</a> - <strong>Total: $5,200 (required)</strong>, with optional software development tools ($7,690)
+
+<ul>
+<li>National Instruments R Series Multifunction RIO With FPGA USB-7856R OEM: $4,200</li>
+<li>Texas Instruments Stellaris LM3S9D96 microprocessor development kit: $450</li>
+<li>Texas Instruments DK-LM3S9B96-EM2 Stellaris adapter board: $50</li>
+<li>Electronic circuit components: $100</li>
+<li>Custom printed circuit boards: $300</li>
+<li>Assembly costs: $100</li>
+<li>Optional (for users wishing to customize of the user interface and adaptive filter):
+
+<ul>
+<li>National Instruments LabVIEW Professional: $5,000 </li>
+<li>National Instruments LabVIEW FPGA Module: $2,700<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#PSC">Physiological Signal Converter</a> - <strong>Total: $1,850</strong>
+
+<ul>
+<li>Electronic circuit components: $450</li>
+<li>Custom printed circuit boards: $1,000</li>
+<li>Assembly costs: $200</li>
+<li>Custom cables: $200 </li>
+</ul>
+</li>
+</ol>
+
+<p>These costs do not included the coaxial cables needed for the PRiME adaptive filter or gated MRI, the multi-wire cable needed for the <a href="#PSC">PSC</a> (i.e., if located in X-ray room), or the installation of these cables. We recommend an ECG simulator for testing the PRiME system. We use a <a href="http://www.heinstruments.com/ecg-simulator.htm">HE Instruments TechPatient</a> (~$375), but any brand will likely be sufficient.</p>
+
+<h2>
+<a id="summary-of-prime-system-changes-facilitating-distribution" class="anchor" href="#summary-of-prime-system-changes-facilitating-distribution" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="changes"></a>Summary of PRiME system changes facilitating distribution</h2>
+
+<p>During extensive testing of the PRiME prototype, numerous and significant engineering design and implementation changes were necessary to achieve a stable system appropriate for patient use. While our existing prototype systems (i.e., NIH and CNMC) incorporate all of these changes, distribution of the PRiME technology via duplication of our existing prototype would likely result in fabrication and performance inconsistencies that would be difficult to troubleshoot. Consequently, we are updating all schematics and printed circuit boards to match our current implementation, as well as moving to commercially available enclosures. These changes should greatly facilitate PRiME system assembly, testing, and usability.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/NHLBI-MR/PRiME">PRiME</a> is maintained by <a href="https://github.com/NHLBI-MR">NHLBI-MR</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
