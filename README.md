@@ -1,6 +1,6 @@
 # PRiME #
 **P**hysiological **R**ecording **i**n **M**RI **E**nvironment  
-**Last Updated: 09/26/2016**
+**Last Updated: 02/22/2017**
 
 Welcome to the main GitHub distribution site for the PRiME system, an MRI-compatible hemodynamic recording system developed at the National Institutes of Health (NIH) in Bethesda, MD. This site is a work in progress and will be updated periodically. Please direct any questions to John Kakareka, [kakareka@nih.gov](kakareka@nih.gov).
 
@@ -8,7 +8,7 @@ Please see the [license file](PRiME-License.txt) file for further details regard
 
 Please refer to [https://nhlbi-mr.github.io/PRiME](https://nhlbi-mr.github.io/PRiME/) for a general overview of the system.
 
-The full release is available [here](https://github.com/NHLBI-MR/PRiME/releases/latest) as a compressed file. The v1.0 release was implemented in Dr. Robert Lederman's lab at the NIH.
+The full release is available [here](https://github.com/NHLBI-MR/PRiME/releases/latest) as a compressed file. The v1.0 release was implemented in Dr. Robert Lederman's lab at the NIH. The v1.1 release adds the Labview application code and some additional documentation.
 
 ----------
 
