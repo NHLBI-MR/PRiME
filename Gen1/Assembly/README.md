@@ -11,10 +11,10 @@ Please refer to [https://nhlbi-mr.github.io/PRiME](https://nhlbi-mr.github.io/PR
 
 ## Overview of the folder layout ##
 
-**Main->Gen1->Assembly**
+**Root->Gen1->Assembly**
 Please refer to "PRiME Main Assembly Instructions.pdf" for full assembly instructions and an explanation of all documents in this folder, including some items which are not listed in the main BOMs.
 
 All files can be sent to a single electronics assembly company who can fully fabricate and assemble the boards based on these documents. As an example, our group used [ECA](http://www.4assembly.com/) (Electronic Contract Assemblers in Frederick, MD), but any assembly company will be able to use the provided documents.
 
-**Main->Gen1->Assembly->Labels
+**Root->Gen1->Assembly->Labels
 This folder contains information on creating labels for the PRiME modules.
