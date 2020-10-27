@@ -23,7 +23,7 @@
 <a id="prime" class="anchor" href="#prime" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PRiME</h1>
 
 <p><strong>P</strong>hysiological <strong>R</strong>ecording <strong>i</strong>n <strong>M</strong>RI <strong>E</strong>nvironment<br>
-Last Updated: 01/11/2019</p>
+Last Updated: 10/27/2020</p>
 
 <p>Welcome to the technology transfer site for the PRiME system, an MRI-compatible hemodynamic recording system developed at the National Institutes of Health (NIH) in Bethesda, MD. This site is a work in progress and will be updated periodically. Please direct any questions to John Kakareka, <a href="kakareka@nih.gov">kakareka@nih.gov</a>.</p>
 
@@ -59,7 +59,7 @@ Information on this site represents the current PRiME prototype design incorpora
 <li>
 <a href="#PSA">Physiological Signal Acquisition</a> </li>
 <li>
-<a href="#CSAF">Control System and Adaptive Filtering</a><br>
+<a href="#CSaAF">Control System and Adaptive Filtering</a><br>
 </li>
 <li>
 <p><a href="#PSC">Physiological Signal Conversion</a> </p>
@@ -81,9 +81,9 @@ The PSA should not be placed in the bore, and should be physically secured such 
 </ul>
 
 <h3>
-<a id="control-system-and-adaptive-filtering" class="anchor" href="#control-system-and-adaptive-filtering" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="CSAF"></a>Control System and Adaptive Filtering</h3>
+<a id="control-system-and-adaptive-filtering" class="anchor" href="#control-system-and-adaptive-filtering" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="CSaAF"></a>Control System and Adaptive Filtering</h3>
 
-<p>The Control System and Adaptive Filtering (CSAF) component is placed in the MRI control room and consists of a commercial FPGA (field programmable gate array) board, a microprocessor board, and a standard Windows 7 computer. The microprocessor board and FPGA board are housed within the same enclosure and interface to the computer through a USB cable. Among other functions, the microprocessor board interfaces the incoming fiber optic cables to the FPGA board inputs.  The FPGA board provides custom real-time digital adaptive filtering of noise induced on ECG signals by the MRI gradients.  The inputs to the adaptive filter include the ECG signals and the gradient control signals from the MRI system.  To access the MRI gradient control signals, coaxial cable is run from the MRI cabinet to the MRI control room. Custom LabVIEW software on the computer allows control of the PRiME system and display of all physiological signals.  The computer software also generates a trigger based on any of the acquired signals, which can be used for gated MRI sequences. PRiME-triggered gated MRI requires an additional coaxial cable to be run from the MRI control room to the MRI scanner trigger input. </p>
+<p>The Control System and Adaptive Filtering (CSaAF) component is placed in the MRI control room and consists of a commercial FPGA (field programmable gate array) board, a microprocessor board, and a standard Windows 7 computer. The microprocessor board and FPGA board are housed within the same enclosure and interface to the computer through a USB cable. Among other functions, the microprocessor board interfaces the incoming fiber optic cables to the FPGA board inputs.  The FPGA board provides custom real-time digital adaptive filtering of noise induced on ECG signals by the MRI gradients.  The inputs to the adaptive filter include the ECG signals and the gradient control signals from the MRI system.  To access the MRI gradient control signals, coaxial cable is run from the MRI cabinet to the MRI control room. Custom LabVIEW software on the computer allows control of the PRiME system and display of all physiological signals.  The computer software also generates a trigger based on any of the acquired signals, which can be used for gated MRI sequences. PRiME-triggered gated MRI requires an additional coaxial cable to be run from the MRI control room to the MRI scanner trigger input. </p>
 
 <p><strong>Quick Notes</strong></p>
 
@@ -98,7 +98,7 @@ The PSA should not be placed in the bore, and should be physically secured such 
 <h3>
 <a id="physiological-signal-converter" class="anchor" href="#physiological-signal-converter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="PSC"></a>Physiological Signal Converter</h3>
 
-<p>The Physiological Signal Converter (PSC) component is placed in either the X-Ray room or MRI control room, depending on the site-specific setup. The PSC receives the PRiME-filtered physiological data from the <a href="#CSAF">CSAF</a>, and converts the digital data to analog signals compatible with the inputs of commercially available hemodynamic recording systems (e.g. Siemens Sensis, GE Mac-Lab). The PSC is located near the analog input module of the commercial recording system (i.e., where ECG and IBP cables are normally attached). If the PSC is in the X-ray room, a multi-wire electrical cable (at least 9 twisted pairs) is run from the MRI control (where the <a href="#CSAF">CSAF</a> is located) to the X-ray room. This cable could be run under the floor as it is essentially a permanent connection.
+<p>The Physiological Signal Converter (PSC) component is placed in either the X-Ray room or MRI control room, depending on the site-specific setup. The PSC receives the PRiME-filtered physiological data from the <a href="#CSaAF">CSaAF</a>, and converts the digital data to analog signals compatible with the inputs of commercially available hemodynamic recording systems (e.g. Siemens Sensis, GE Mac-Lab). The PSC is located near the analog input module of the commercial recording system (i.e., where ECG and IBP cables are normally attached). If the PSC is in the X-ray room, a multi-wire electrical cable (at least 9 twisted pairs) is run from the MRI control (where the <a href="#CSaAF">CSaAF</a> is located) to the X-ray room. This cable could be run under the floor as it is essentially a permanent connection.
 As with the <a href="#PSA">PSA</a> cabling, IBP signal custom cable adapters are required between the PSC and commercial recording system. </p>
 
 <p><strong>Quick Notes</strong></p>
@@ -132,7 +132,7 @@ As with the <a href="#PSA">PSA</a> cabling, IBP signal custom cable adapters are
 </ul>
 </li>
 <li>
-<a href="#CSAF">Control System and Adaptive Filter</a> - <strong>Total: $5,200 (required)</strong>, with optional software development tools ($7,690)
+<a href="#CSaAF">Control System and Adaptive Filter</a> - <strong>Total: $5,200 (required)</strong>, with optional software development tools ($7,690)
 
 <ul>
 <li>National Instruments R Series Multifunction RIO With FPGA USB-7856R OEM: $4,200</li>
@@ -164,6 +164,27 @@ As with the <a href="#PSA">PSA</a> cabling, IBP signal custom cable adapters are
 </ol>
 
 <p>These costs do not included the coaxial cables needed for the PRiME adaptive filter or gated MRI, the multi-wire cable needed for the <a href="#PSC">PSC</a> (i.e., if located in X-ray room), or the installation of these cables. We recommend an ECG simulator for testing the PRiME system. We use a <a href="http://www.heinstruments.com/ecg-simulator.htm">HE Instruments TechPatient</a> (~$375), but any brand will likely be sufficient.</p>
+
+<h2> Cabling Requirements </h2>
+The different modules (<a href="#PSA">PSA</a>, <a href="#CSaAF">CSaAF</a>, and <a href="#PSC">PSC</a>) of the PRiME system are connected through cabling that must be provided and installed by the end user. This additional cabling is explained in each modules section, but is repeated here along with some additional considerations.
+<h3> PSA - CSaAF cabling </h3>
+The PSA and CSaAF modules are connected through four 1mm POFs (plastic optical fiber), typically in two dual-fiber cables. As the PSA module moves with the patient, the fiber cables should be long enough to ensure full range of potential motion, while allowing plenty of slack in the fibers. There is no performance loss in using longer fiber cables in this system. Each facility should consider cable management techniques to avoid tripping hazards, as well as cable storage techniques to minimize potential damage to the fibers when not in use.
+
+The fiber cables are typically run through a waveguide into the MRI control room. Once in the control room, the fiber cables should run to the CSaAF module in a protected fashion. The fiber cables in the control room side are typically run under the floor, in the ceiling, or along the wall.
+
+Any damage to the fiber cables is most likely to happen on the MRI/X-Ray side. In order to ease replacement of damaged fibers, we recommend splitting the cables into two parts using appropriate barrel connectors located near the waveguide. 
+
+<h3> CSaAF - PSC cabling </h3>
+The CSaAF and PSC modules are connected through multi-wire, twisted pair electrical cables, typically 24 AWG per wire. A minimum of 9 twisted pairs are required. For example, a Belden 9515 cable could be used, although this cable contains 15 twisted-pairs. The length of the cables will depend on the final placement of the two modules. The PSC module should be placed in very close proximity to the commercial recording system (e.g. Siemens SENSIS, GE MacLab) located in the X-Ray room. The multi-wire cable is typically run under the floor of the X-ray room in the same conduit as the cabling for the commercial recording system. The connectors for the multi-wire cable are screw-terminal pluggable connectors which can be attached after the cable is in its final position.
+
+<h3> MRI gating </h3>
+In order to use the PRiME system to gate MRI imaging sequences, a coaxial cable (typically RG-58) must be run from the CSaAF module in the control room to the location of the MRI magnet trigger input. On some Siemens magnets, this trigger input is located on the magnet itself. Typically, the coaxial cable will be run through the waveguide into the ceiling of the MRI room. The cable then drops down from the ceiling alongside the magnet to the input connector. It is the end-user's responsibility to verify the magnet supports external gating with a TTL-compatible signal and the location and type of the connector as not all magnets allow for external triggering. On the CSaAF side, a standard male BNC bayonent-style connector should be attached to the coaxial cable. On the magnet side, either attach an appropriate connector, or a male BNC bayonent-style connector with an adapter.
+	
+<h3> MRI gradients </h3>
+The PRiME system uses analog outputs of the MRI system as inputs to an adaptive filter. On some Siemens MRI system, these signals are accessed via the MRI electronics located in a separate room. It is the end user's responsibility to verify that these signals are available and the style of the connectors. Some Siemens MRI systems use female QLA connectors. In the case, QLA to BNC adapters are used to connect to coaxial cables using standard BNC connectors.
+Three coaxial cables (typically RG-58) need to be run from the CSaAF module in the control to the MRI gradient connectors. Typically, these connectors are run in the ceiling, but the exact route depends on the location of the MRI electronics room in relation to the MRI control room. Terminate all cables using male BNC bayonent-style connectors.
+
+
 
 <h2>
 <a id="summary-of-prime-system-changes-facilitating-distribution" class="anchor" href="#summary-of-prime-system-changes-facilitating-distribution" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="changes"></a>Summary of PRiME system changes facilitating distribution</h2>
