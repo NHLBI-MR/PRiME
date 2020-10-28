@@ -11,17 +11,17 @@ Please refer to [https://nhlbi-mr.github.io/PRiME](https://nhlbi-mr.github.io/PR
 
 ## Overview of the folder layout ##
 
-**Main->Gen1->Components**  
+**Root->Gen1->Components**  
 This folder contains all the schematic, PCB layout files, software code, and 3D models used in the design. These files will contain the more detailed information on the designs and the files which would be modified if changes are needed. The schematic and PCB layout files were created using [Cadsoft Eagle v7](https://cadsoft.io/). The 3D models were generated using [Solidworks 2016](http://www.solidworks.com/), the software code used in the Launchpad (internal to the CSaAF component) was written using [Code Composer Studio](http://www.ti.com/tool/ccstudio). The main user interface (installed on standard Windows PC) and the FPGA code (internal to the CSaAF component) was written in [LabVIEW](http://www.ni.com/labview/).
 
-**Main->Gen1->Components->CSaAF**  
+**Root->Gen1->Components->CSaAF**  
 This folder contains all design files related to the [Control System and Adaptive Filtering](https://nhlbi-mr.github.io/PRiME/#CSAF) component of the PRiME system.
 
-**Main->Gen1->Components->PSA**  
+**Root->Gen1->Components->PSA**  
 This folder contains all design files related to the [Physiological Signal Acquisition](https://nhlbi-mr.github.io/PRiME/#PSA) component of the PRiME system.
 
 
-**Main->Gen1->Components->PSC**  
+**Root->Gen1->Components->PSC**  
 This folder contains all design files related to the [Physiological Signal Converter](https://nhlbi-mr.github.io/PRiME/#PSC) component of the PRiME system.
 
 **CAM Files**  

@@ -11,7 +11,10 @@ Please refer to [https://nhlbi-mr.github.io/PRiME](https://nhlbi-mr.github.io/PR
 
 ## Overview of the folder layout ##
 
-**Main->Gen1->Assembly**  
-This folder contains all the assembly files needed to implement the PRiME Gen1 system. This includes BOMs (bill of materials which list all parts used in the PRiME system), GERBER files for all printed circuit boards (PCBs) (GERBER files are the standard file format used by printed circuit board production companies), STEP files and mechanical drawings for enclosure cutouts (which can be sent directly to Bud Industries, the manufacturer of the enclosures used in the system, who can also perform the necessary cutouts), and AVI files showing how the boards and enclosures are assembled.
+**Root->Gen1->Assembly**
+Please refer to "PRiME Main Assembly Instructions.pdf" for full assembly instructions and an explanation of all documents in this folder, including some items which are not listed in the main BOMs.
 
 All files can be sent to a single electronics assembly company who can fully fabricate and assemble the boards based on these documents. As an example, our group used [ECA](http://www.4assembly.com/) (Electronic Contract Assemblers in Frederick, MD), but any assembly company will be able to use the provided documents.
+
+**Root->Gen1->Assembly->Labels
+This folder contains information on creating labels for the PRiME modules.

@@ -11,7 +11,7 @@ Please refer to [https://nhlbi-mr.github.io/PRiME](https://nhlbi-mr.github.io/PR
 
 ## Overview of the folder layout ##
 
-**Main->Gen1->Images**  
+**Root->Gen1->Images**  
 This folder contains images of the final system.
 
 

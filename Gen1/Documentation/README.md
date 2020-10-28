@@ -11,7 +11,7 @@ Please refer to [https://nhlbi-mr.github.io/PRiME](https://nhlbi-mr.github.io/PR
 
 ## Overview of the folder layout ##
 
-**Main->Gen1->Documentation**  
+**Root->Gen1->Documentation**  
 This folder contains additional documentation on the system, including PDFs of the circuit schematics, visual overview of the system setup, notes on component selection, manuals, and troubleshooting guides.
 
 
